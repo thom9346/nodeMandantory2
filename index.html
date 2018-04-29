@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+ 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Document</title>
+
+    <link href="styles/main.css" rel="stylesheet" type="text/css"> <!--Note that there's no /public in front of /styles/, cause we had to sad express.static in app.js to use css files in nodejs applicationsl.-->
+
+
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-sm">
+
+
+                <h1 class="headline-text">Welcome to NodeJS World Chat</h1>
+                <div class="card card-container">
+                    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                    <p id="profile-name" class="profile-name-card"></p>
+                    <form class="form-signin">
+                        <span id="reauth-email" class="reauth-email"></span>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <div id="remember" class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                    </form><!-- /form -->
+                    <a href="#" class="register" data-toggle="modal" data-target="#registerModal">
+                        Don't have an account? Register here
+                    </a>
+
+                
+           </div><!-- /card-container -->
+       </div>
+     
+
+        </div>
+
+        <div class=></div>
+        <blockquote class="blockquote text-right">
+                <p class="mb-0">A place where even lizards can chat</p>
+                <footer class="blockquote-footer">Mark Zuckerberg<cite title="Source Title"> ©Watbook.com </cite></footer>
+              </blockquote>
+
+
+              <!-- Modal -->
+
+              <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Tell us about yourself</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          
+                            
+                                <form id="modalForm">
+
+                                    <div>
+                                        <label>Desired username</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Username">
+                                    </div>
+
+                                
+
+                                        <div class="form-group">
+                                          <label for="exampleInputPassword1">Password</label>
+                                          <input type="password" class="form-control" id="password" placeholder="Password">
+                                        </div>
+                                   
+
+                                          <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" id="emailID" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone</small>
+                                              </div>
+
+                                       
+                                        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+                                      </form>
+
+                                      <div id="formNotValid"></div>
+                                      <div id="formValid"></div>
+
+                                      
+
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    </div><!-- /container -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="clientSideJavascript.js"> </script> <!--Note that we only specific clientSideJavascipt.js here, even tho its in a folder "public". This is again because we have defined app.use(express.static(__dirname + "/public")) in app.js-->
+</body>
+</html>

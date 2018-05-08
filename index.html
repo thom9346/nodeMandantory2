@@ -13,7 +13,7 @@
 
     <title>Document</title>
 
-    <link href="styles/main.css" rel="stylesheet" type="text/css"> <!--Note that there's no /public in front of /styles/, cause we had to sad express.static in app.js to use css files in nodejs applicationsl.-->
+    <link href="styles/main.css" rel="stylesheet" type="text/css"> <!--Note that there's no /public in front of /styles/, cause we had to say express.static in app.js to use css files in nodejs applicationsl.-->
 
 
 </head>
@@ -36,7 +36,7 @@
                                 <input type="checkbox" value="remember-me"> Remember me
                             </label>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" id="loginButton" type="submit">Sign in</button>
                     </form><!-- /form -->
                     <a href="#" class="register" data-toggle="modal" data-target="#registerModal">
                         Don't have an account? Register here
@@ -104,7 +104,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+            
                         </div>
                       </div>
                     </div>

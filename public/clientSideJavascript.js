@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
 
     $("#submitButton").click(function(event) {
@@ -16,28 +18,45 @@ $(document).ready(function(){
         }
 
         else {
+            console.log("THIS IS OUTSIDE DATA: " + username, password, email);
+
+    
         var data = {
 
-            "username": username,
-            "password": password,
-            "email": email
-        }
+            username: username,
+            password: password,
+            email: email
+        };
+
+        console.log("this is the data: " + data);
 
 
         $.ajax({
             type: "POST",
             url: "sign-up",
             data: data,
+            success: function(response) {
+                console.log("WHAT THE FUUUUCK");
+                console.log(response.username + response.password + response.email);
+            }
 
-        }).done(function(response) {
-            console.log(response);
         });
 
         $("#formNotValid").empty();
         $("#formValid").html("✔ Registration complete")
 
+        
         console.log("this is the uysername: " + username);
     }
     
     });
-})
+
+
+    $("#loginButton").click(function(event) {
+        
+        var email = $("#inputEmail").val();
+        var password = $("#inputPassword").val();
+
+    
+    });
+});

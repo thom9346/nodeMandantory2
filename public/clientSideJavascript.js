@@ -36,7 +36,6 @@ $(document).ready(function(){
             url: "sign-up",
             data: data,
             success: function(response) {
-                console.log("WHAT THE FUUUUCK");
                 console.log(response.username + response.password + response.email);
             }
 
@@ -56,6 +55,21 @@ $(document).ready(function(){
         
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
+
+        var loginData = {"email": email, "password": password};
+
+        $.ajax({
+            type: "POST", 
+            url: '/attemptLogin',
+            data: loginData,
+            success: function(data) {
+                //it navigates to localhost:3000/chat if the ajax request was a success(if username and password was correct on the client side)
+                console.log("Success!");
+                document.location.href = "http://localhost:3000/chat";
+                
+            }
+        });
+        
 
     
     });

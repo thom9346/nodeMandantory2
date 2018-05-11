@@ -86,7 +86,7 @@ app.post("/attemptLogin", function(req,res) {
                 //gets in here if the user does not exsist.
                 if(user === null) {
                     console.log("User doesn't exist in database") //(Yes, I know that the message should be the same no matter if the user exists or not, but this is for learning purposes.)
-             
+                   
                 }
                 //gets in here if username and password matches in the database
                 else if(user.email === req.body.email && user.password === req.body.password) {
@@ -184,3 +184,5 @@ var server = http.listen(3000, function(err) {
 
     console.log("listening on port: " + server.address().port);
 });
+
+module.exports = server;
